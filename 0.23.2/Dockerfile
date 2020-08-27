@@ -31,8 +31,8 @@ RUN mkdir /root/.pip && \
 "progress-bar=emoji"\
         > /root/.pip/pip.conf && \
     # pip3 install --upgrade pip && \
-    pip3 install matplotlib opencv-python && \
-    pip3 install cmake scikit-build scikit-learn
+    pip3 install matplotlib && \
+    pip3 install scikit-learn
 
 # Add alias
 RUN alias l="ls -alh --full-time" && \
