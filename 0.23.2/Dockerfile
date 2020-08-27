@@ -19,13 +19,13 @@ RUN apt update && \
         python3-pip
 
 # Configure default Pypi repository address and default progress bar style
-RUN mkdir ~/.pip && \
+RUN mkdir /root/.pip && \
     echo -e \
 "[global]\n"\
 "index-url=http://mirror.kakao.com/pypi/simple/\n"\
 "trusted-host=mirror.kakao.com\n"\
 "progress-bar=emoji"\
-        > ~/.pip/pip.conf && \
+        > /root/.pip/pip.conf && \
     # pip3 install --upgrade pip && \
     pip3 install scikit-learn && \
     pip3 install matplotlib numpy opencv-python
@@ -33,6 +33,9 @@ RUN mkdir ~/.pip && \
 # Add alias
 RUN alias l="ls -alh --full-time" && \
     alias cls='clear'
+
+# Define Workdir
+WORKDIR /root
 
 # Write maintainer information
 LABEL maintainer="LIM HYUN SEOK <contact@loopback.kr>"
