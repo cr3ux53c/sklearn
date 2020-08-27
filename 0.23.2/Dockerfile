@@ -32,7 +32,8 @@ RUN mkdir /root/.pip && \
         > /root/.pip/pip.conf && \
     # pip3 install --upgrade pip && \
     pip3 install scikit-learn && \
-    pip3 install matplotlib numpy opencv-python
+    pip3 install matplotlib && \
+    pip3 install opencv-python==3.4.11.41
 
 # Add alias
 RUN alias l="ls -alh --full-time" && \
