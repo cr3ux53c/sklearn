@@ -23,9 +23,9 @@ RUN mkdir ~/.pip && \
 "trusted-host=mirror.kakao.com\n"\
 "progress-bar=emoji"\
         > ~/.pip/pip.conf && \
-    pip install --upgrade pip && \
-    pip install scikit-learn && \
-    pip install matplotlib numpy opencv-python
+    # pip3 install --upgrade pip && \
+    pip3 install scikit-learn && \
+    pip3 install matplotlib numpy opencv-python
 
 # Add alias
 RUN alias l="ls -alh --full-time" && \
