@@ -1,5 +1,9 @@
 FROM ubuntu:18.04
 
+# Change Timezone
+ENV TZ=Asia/Seoul
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # Change default Shell to bash
 SHELL ["/bin/bash", "-c"]
 
