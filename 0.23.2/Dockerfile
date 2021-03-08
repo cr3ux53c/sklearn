@@ -19,6 +19,8 @@ RUN apt update && \
         wget \
         zip \
         unzip \
+        libglu1-mesa-dev \
+        libglib2.0-0 \
         python3 \
         python3-pip
 
