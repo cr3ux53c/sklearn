@@ -32,13 +32,17 @@ RUN mkdir /root/.pip && \
 "trusted-host=mirror.kakao.com\n"\
 "progress-bar=emoji"\
         > /root/.pip/pip.conf && \
-    # pip3 install --upgrade pip && \
-    pip3 install matplotlib && \
-    pip3 install scikit-learn
+    pip3 install --upgrade pip && \
+    pip3 install --no-cache-dir \
+        matplotlib \
+        scikit-learn==0.23.2
 
 # Add alias
 RUN alias l="ls -alh --full-time" && \
     alias cls='clear'
+
+# Delete unnecessary data
+RUN rm -rf /var/lib/apt/lists/*
 
 # Define Workdir
 WORKDIR /root
